@@ -7,7 +7,6 @@ public class HtmlGeneratorStepDefinitions
     private readonly HtmlGenerator _htmlGenerator = new();
     private string? _result;
 
-
     [Given(@"the first snippet is a paragraph")]
     public void GivenTheFirstSnippetIsAParagraph()
     {
@@ -29,8 +28,8 @@ public class HtmlGeneratorStepDefinitions
     }
 
     [Then(@"the result should be a combination of the snippets")]
-    public void ThenTheResultShouldBeACombinationOfTheSnippets()
+    public async Task ThenTheResultShouldBeACombinationOfTheSnippets()
     {
-        Verify(_result);
+        await Verify(_result);
     }
 }
